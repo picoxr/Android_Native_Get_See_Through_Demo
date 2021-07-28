@@ -2,4 +2,8 @@
 
 ## Introduction
 
-This demo shows how to use [Pico Android Native SDK](https://developer.pico-interactive.com/sdk/index?id=6).
+The project integrates `Pico Native SDK v1.3.6` to show how to get the image of the camera.
+
+## Usage
+
+After entering the scene, you can get the camera image by pressing `the HMD confirm` button.
