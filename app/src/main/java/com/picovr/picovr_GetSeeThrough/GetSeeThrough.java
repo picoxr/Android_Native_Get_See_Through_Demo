@@ -98,7 +98,7 @@ public class GetSeeThrough extends VRActivity implements RenderInterface {
     private ShortBuffer cam_IndexsRight;
     private Bitmap textureBmpRight = null;
     private int camModelViewProjectionParamRight;
-    private boolean use_once = true;
+    private boolean use_once = false;
     private boolean showCamera_once = false;//first should be false, when once is true for compatible with old system
     private boolean showCamera = true;
 
@@ -713,10 +713,6 @@ public class GetSeeThrough extends VRActivity implements RenderInterface {
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         Log.d(TAG_TH, DBG_LC + " onKeyUp:" + keyCode);
-        if (keyCode == 96) {
-            return true;
-        }
-
         return super.onKeyUp(keyCode, event);
     }
 
@@ -724,7 +720,7 @@ public class GetSeeThrough extends VRActivity implements RenderInterface {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG_TH, DBG_LC + " onKeyDown:" + keyCode);
 
-        if (keyCode == 96) {
+        if (use_once && (keyCode == 96)) {
             showCamera = !showCamera;
             showCamera_once = !showCamera_once;
             return true;
